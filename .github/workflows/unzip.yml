@@ -24,4 +24,4 @@ jobs:
           git push
 
 permissions:
- contents: write
+contents: write
