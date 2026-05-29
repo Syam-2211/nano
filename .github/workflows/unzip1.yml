@@ -1,0 +1,27 @@
+name: Unzip Archive
+
+on:
+  push:
+    paths:
+      - "NANO BOTZ NEWWW.zip"
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Unzip file
+        run: unzip "NANO BOTZ NEWWW.zip" -d extracted
+
+      - name: Commit extracted files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add extracted
+          git commit -m "Unzipped archive automatically"
+          git push
+
+permissions:
+  contents: write
