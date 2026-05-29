@@ -3,7 +3,7 @@ name: Unzip Archive
 on:
   push:
     paths:
-      - "NANO BOTZ NEWWW.zip"   # Trigger only when the ZIP file changes
+      - "NANO BOTZ NEWWW.zip"
 
 jobs:
   unzip:
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Unzip file
-        run: unzip myfile.zip -d extracted
+        run: unzip "NANO BOTZ NEWWW.zip" -d extracted
 
       - name: Commit extracted files
         run: |
