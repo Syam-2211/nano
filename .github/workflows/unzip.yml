@@ -22,3 +22,6 @@ jobs:
           git add extracted
           git commit -m "Unzipped archive automatically"
           git push
+
+permissions:
+ contents: write
