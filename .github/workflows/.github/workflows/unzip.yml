@@ -1,0 +1,24 @@
+name: Unzip Archive
+
+on:
+  push:
+    paths:
+      - "myfile.zip"   # Trigger only when the ZIP file changes
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Unzip file
+        run: unzip myfile.zip -d extracted
+
+      - name: Commit extracted files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add extracted
+          git commit -m "Unzipped archive automatically"
+          git push
