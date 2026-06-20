@@ -112,7 +112,7 @@ async function NanoBotzInd() {
          creds: state.creds,
          keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
       },
-      browser: [ 'Mac OS', 'Safari', '10.15.7' ],
+      browser: [ 'Ubuntu', 'Chrome', '114.0.5735.198' ], // More standard web browser footprint
       patchMessageBeforeSending: (message) => {
             const requiresPatch = !!(
                 message.buttonsMessage ||
@@ -165,7 +165,7 @@ const RATE_LIMIT_PATTERNS = [
 /\b429\b/,
 /overlimit/i
 ]
-const MIN_SEND_INTERVAL_MS = 350
+const MIN_SEND_INTERVAL_MS = 2500 // Increased interval to prevent bans
 const MAX_RATE_RETRY = 4
 let sendQueue = Promise.resolve()
 let lastSendAt = 0
