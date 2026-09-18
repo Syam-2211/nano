@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTO PLATFORM</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Mesh Gradient -->
+    <div class="mesh-bg"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- 1. Hero / Header Bar -->
+        <header class="glass-panel header-bar anime-item">
+            <div class="header-left">
+                <h1 class="logo">EVENTO PLATFORM</h1>
+                <p class="tagline">Smart Attendance. Smarter Crowd Management. Safer Events.</p>
+            </div>
+            <div class="header-right">
+                <div class="live-clock" id="live-clock">--:--:--</div>
+                <div class="live-date" id="live-date">--- --, ----</div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- 2. Main Centralized Control Panel -->
+            <main class="control-panel">
+                <!-- Top Stats Row -->
+                <section class="stats-row">
+                    <div class="glass-panel stat-card anime-item">
+                        <h3>Live Registrations</h3>
+                        <div class="stat-value" id="stat-registrations">0</div>
+                    </div>
+                    <div class="glass-panel stat-card anime-item">
+                        <h3>Student Count</h3>
+                        <div class="stat-value" id="stat-students">0</div>
+                    </div>
+                    <div class="glass-panel stat-card anime-item">
+                        <h3>Guest Passes</h3>
+                        <div class="stat-value" id="stat-guests">0</div>
+                    </div>
+                    <div class="glass-panel stat-card risk-alert anime-item">
+                        <h3>Active Risk Alerts</h3>
+                        <div class="stat-value" id="stat-alerts">0</div>
+                        <div class="pulse-indicator" id="alert-pulse"></div>
+                    </div>
+                </section>
+
+                <div class="middle-grid">
+                    <!-- Live Surveillance Feeds -->
+                    <section class="surveillance-section anime-item glass-panel">
+                        <h2>CCTV + Drone Feeds</h2>
+                        <div class="video-grid">
+                            <div class="video-placeholder">
+                                <div class="cam-label"><span class="red-dot"></span>CCTV Gate 1</div>
+                            </div>
+                            <div class="video-placeholder">
+                                <div class="cam-label"><span class="red-dot"></span>Drone Aerial Fusion</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Real-Time Heat Map -->
+                    <section class="heatmap-section anime-item glass-panel">
+                        <h2>Density Heat Map</h2>
+                        <div class="heatmap-display">
+                            <!-- Visual placeholder for heatmap -->
+                            <div class="heatmap-graphic"></div>
+                        </div>
+                        <div class="heatmap-legend">
+                            <div class="legend-item"><span class="dot low"></span> Low (Safe continuous flow)</div>
+                            <div class="legend-item"><span class="dot medium"></span> Medium (Monitor Area)</div>
+                            <div class="legend-item"><span class="dot high"></span> High (Precaution Alert)</div>
+                            <div class="legend-item"><span class="dot critical" id="critical-dot"></span> Critical (Emergency Response)</div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- 3. Multi-Layer Security Flow -->
+                <section class="security-flow">
+                    <div class="glass-panel flow-card anime-item">
+                        <div class="step-num">1</div>
+                        <h4>QR Scan</h4>
+                        <p>Initial gate authentication</p>
+                    </div>
+                    <div class="glass-panel flow-card anime-item">
+                        <div class="step-num">2</div>
+                        <h4>DB Verification</h4>
+                        <p>Cross-check registration</p>
+                    </div>
+                    <div class="glass-panel flow-card anime-item">
+                        <div class="step-num">3</div>
+                        <h4>AI Face Match</h4>
+                        <p>Prevents ID sharing</p>
+                    </div>
+                    <div class="glass-panel flow-card anime-item">
+                        <div class="step-num">4</div>
+                        <h4>Entry Granted</h4>
+                        <p>Automated logging</p>
+                    </div>
+                </section>
+            </main>
+
+            <!-- 4. Live Alerts Sidebar -->
+            <aside class="alerts-sidebar glass-panel anime-item">
+                <h2>Live Logs</h2>
+                <div class="logs-container" id="logs-container">
+                    <!-- Logs will be populated here by JS -->
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
